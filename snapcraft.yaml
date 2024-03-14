@@ -1,0 +1,23 @@
+name: stayfit
+version: 1.0.10
+summary: Health Application
+description: Let's stay healthy together!
+confinement: strict
+base: core18
+grade: stable
+icon: snap/gui/icon.png
+
+
+apps:
+   stayfit:
+     command: stayfit
+     extensions: [flutter-master]
+     plugs:
+       - network
+       - desktop
+
+parts:
+  stayfit:
+    source: .
+    plugin: flutter
+    flutter-target: lib/main.dart # The main entry-point file of the application
